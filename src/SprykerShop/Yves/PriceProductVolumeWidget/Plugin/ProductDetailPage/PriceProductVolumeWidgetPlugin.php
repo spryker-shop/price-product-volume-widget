@@ -20,11 +20,6 @@ use SprykerShop\Yves\ProductDetailPage\Dependency\Plugin\VolumePriceProductWidge
  */
 class PriceProductVolumeWidgetPlugin extends AbstractWidgetPlugin implements PriceProductVolumeWidgetPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return void
-     */
     public function initialize(ProductViewTransfer $productViewTransfer): void
     {
         $widget = new CurrentProductPriceVolumeWidget(

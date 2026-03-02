@@ -53,19 +53,11 @@ class PriceProductVolumeResolver implements PriceProductVolumeResolverInterface
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \SprykerShop\Yves\PriceProductVolumeWidget\Dependency\Service\PriceProductVolumeWidgetToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(PriceProductVolumeWidgetToUtilEncodingServiceInterface $utilEncodingService)
     {
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CurrentProductPriceTransfer $currentProductPriceTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductVolumeCollectionTransfer
-     */
     public function resolveVolumeProductPrices(CurrentProductPriceTransfer $currentProductPriceTransfer): PriceProductVolumeCollectionTransfer
     {
         $priceProductVolumeCollectionTransfer = new PriceProductVolumeCollectionTransfer();
@@ -82,13 +74,6 @@ class PriceProductVolumeResolver implements PriceProductVolumeResolverInterface
         return $priceProductVolumeCollectionTransfer;
     }
 
-    /**
-     * @param array $volumePriceData
-     * @param \Generated\Shared\Transfer\PriceProductVolumeCollectionTransfer $priceProductVolumeCollection
-     * @param string $priceMode
-     *
-     * @return \Generated\Shared\Transfer\PriceProductVolumeCollectionTransfer
-     */
     protected function mapVolumeProductPriceCollection(
         array $volumePriceData,
         PriceProductVolumeCollectionTransfer $priceProductVolumeCollection,
@@ -105,12 +90,6 @@ class PriceProductVolumeResolver implements PriceProductVolumeResolverInterface
         return $priceProductVolumeCollection;
     }
 
-    /**
-     * @param array $priceData
-     * @param string $priceMode
-     *
-     * @return \Generated\Shared\Transfer\PriceProductVolumeTransfer
-     */
     protected function formatPriceProductVolumeTransfer(array $priceData, string $priceMode): PriceProductVolumeTransfer
     {
         $volumePrice = new PriceProductVolumeTransfer();
@@ -124,12 +103,6 @@ class PriceProductVolumeResolver implements PriceProductVolumeResolverInterface
         return $volumePrice;
     }
 
-    /**
-     * @param array $priceData
-     * @param string $priceMode
-     *
-     * @return bool
-     */
     protected function isVolumePriceDataValid(array $priceData, string $priceMode): bool
     {
         if (

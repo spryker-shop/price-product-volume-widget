@@ -14,17 +14,11 @@ use SprykerShop\Yves\PriceProductVolumeWidget\PriceProductResolver\PriceProductV
 
 class PriceProductVolumeWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\PriceProductVolumeWidget\PriceProductResolver\PriceProductVolume\PriceProductVolumeResolverInterface
-     */
     public function createPriceProductVolumeResolver(): PriceProductVolumeResolverInterface
     {
         return new PriceProductVolumeResolver($this->getUtilEncodingService());
     }
 
-    /**
-     * @return \SprykerShop\Yves\PriceProductVolumeWidget\Dependency\Service\PriceProductVolumeWidgetToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): PriceProductVolumeWidgetToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(PriceProductVolumeWidgetDependencyProvider::SERVICE_UTIL_ENCODING);

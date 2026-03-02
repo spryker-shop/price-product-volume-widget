@@ -17,9 +17,6 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class ProductPriceVolumeWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     */
     public function __construct(ProductViewTransfer $productViewTransfer)
     {
         $widget = new CurrentProductPriceVolumeWidget($productViewTransfer->getCurrentProductPrice());
@@ -27,17 +24,11 @@ class ProductPriceVolumeWidget extends AbstractWidget
         $this->parameters = $widget->getParameters();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductPriceVolumeWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@PriceProductVolumeWidget/views/volume-price-product-widget/volume-price-product.twig';

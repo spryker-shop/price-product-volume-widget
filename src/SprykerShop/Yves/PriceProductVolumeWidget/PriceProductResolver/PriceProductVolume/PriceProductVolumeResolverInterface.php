@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\PriceProductVolumeCollectionTransfer;
 
 interface PriceProductVolumeResolverInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CurrentProductPriceTransfer $currentProductPriceTransfer
-     *
-     * @return \Generated\Shared\Transfer\PriceProductVolumeCollectionTransfer
-     */
     public function resolveVolumeProductPrices(CurrentProductPriceTransfer $currentProductPriceTransfer): PriceProductVolumeCollectionTransfer;
 }
